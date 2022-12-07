@@ -14,9 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.conf.urls import url, include
+from django.contrib import admin
+from rest_framework.routers import DefaultRouter
+from django.conf.urls.static import static
+from serverui.views import MusicViewSet
 
+from django.conf import settings
+router = DefaultRouter()
+router.register(r'music', MusicViewSet, base_name='music')
+STATIC_URL = 'static/'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('v1/api', include('dmicaapi.urls')),
-]
+
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(router.urls, namespace='api'), name='api'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
