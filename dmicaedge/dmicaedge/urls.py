@@ -22,7 +22,7 @@ from serverui.views import MusicViewSet
 
 from django.conf import settings
 router = DefaultRouter()
-router.register(r'music', MusicViewSet, base_name='music')
+router.register('serverui', MusicViewSet,basename='serverui')
 STATIC_URL = 'static/'
 urlpatterns = [
 
@@ -30,4 +30,5 @@ urlpatterns = [
     re_path(r'^v1/api/', include('dmicaapi.url')),
     re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns+=router.urls
 
