@@ -14,7 +14,7 @@ from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 # Create your views here.
 class RequesterAction(APIView):
     def post(self, request):
-        data = request.image
+        data = request.data
         
         #information for processing changes by the image classification module
         if data == None :
@@ -30,54 +30,40 @@ class RequesterAction(APIView):
     
 class VigilantInformation(APIView):
     def post(self, request):
-        data = request.image
+        data = request.data
         
-        data = request.image
-        
-        #information for processing changes by the image classification module
+        #information for processing  the data post by client side
         if data == None :
             pass
         else :
             pass
         
-        prediction_model = AppConfig.model
-        prediction_result = prediction_model.predict()
-        response_data = prediction_result
-        return Response(response_data, status=200)
+        
+        # return Response(response_data, status=200)
     
 class ObservantControl(APIView):
     def post(self, request):
-        data = request.image
+        data = request.data
         
-        data = request.image
-        
-        #information for processing changes by the image classification module
+        #information for processing the data post by client side
         if data == None :
             pass
         else :
             pass
-        
-        prediction_model = AppConfig.model
-        prediction_result = prediction_model.predict()
-        response_data = prediction_result
-        return Response(response_data, status=200)
+   
+        # return Response(response_data, status=200)
     
 class ObservantInformation(APIView):
     def post(self, request):
-        data = request.image
-        
-        data = request.image
+        data = request.data
         
         #information for processing changes by the image classification module
         if data == None :
             pass
         else :
             pass
-        
-        prediction_model = AppConfig.model
-        prediction_result = prediction_model.predict()
-        response_data = prediction_result
-        return Response(response_data, status=200)
+       
+        # return Response(response_data, status=200)
         
         
         
