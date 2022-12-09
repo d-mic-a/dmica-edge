@@ -4,10 +4,12 @@ from .apps import AppConfig
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import render
+from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 
-import sys 
-sys.path.append("..")
-from backend.model.yolov7-pose-estimation.pose-estimate import detect
+
+# import sys 
+# sys.path.append('../dmicaedge')
+# from dmicaedge.backend.model.yolov7-pose-estimation.pose-estimate import detect
 
 # Create your views here.
 class RequesterAction(APIView):
