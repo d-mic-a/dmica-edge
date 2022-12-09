@@ -27,7 +27,7 @@ STATIC_URL = 'static/'
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(router.urls, namespace='api'), name='api'),
+    url(r'^v1/api/', include('dmicaapi.url')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
