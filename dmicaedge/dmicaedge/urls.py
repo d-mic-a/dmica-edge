@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import url, include
+from django.urls import path, re_path, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 from django.conf.urls.static import static
@@ -26,8 +26,8 @@ router.register(r'music', MusicViewSet, base_name='music')
 STATIC_URL = 'static/'
 urlpatterns = [
 
-    url(r'^admin/', admin.site.urls),
-    url(r'^v1/api/', include('dmicaapi.url')),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^v1/api/', include('dmicaapi.url')),
+    re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
