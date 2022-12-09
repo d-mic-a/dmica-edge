@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import dmicaedge
+from .views import *
 
 urlpatterns = [
-    path('prediction/', HandPredictions.as_view(), name='HandPredictions'),
-    path('mic_control/', MicControl.as_view(), name='MicControl'),
+    path('requester_action/', RequesterAction.as_view(), name='RequesterAction'),
+    path('vigilant_information', VigilantInformation.as_view(), name='VigilantInformation'),
+    path('observant_control/', ObservantControl.as_view(), name='ObservantControl'),
+    path('observant_information', ObservantInformation.as_view(), name='ObservantInformation'),
 ]
