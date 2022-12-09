@@ -24,7 +24,7 @@ class RequesterAction(APIView):
         # ret will be 'None' if no one start or stop in this image 
         # ret[0] is [x, y, z]
         # ret[1] is 'left' or 'right' 
-        return Response(response_data, status=200)
+        return Response(ret, status=200)
     
 class VigilantInformation(APIView):
     def post(self, request):
