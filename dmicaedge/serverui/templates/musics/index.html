@@ -1,0 +1,20 @@
+<table class ="table" border="1">
+    <thead>
+        <tr>
+            <th> singer</th>
+            <th> song</th>
+            <th> last_modify_date</th>
+            <th> created</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for music in musics%}
+        <tr>
+            <td>{{music.song}}</td>
+            <td>{{music.singer}}</td>
+            <td>{{music.last_modify_date}}</td>
+            <td>{{music.created}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
