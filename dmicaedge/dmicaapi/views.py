@@ -10,7 +10,7 @@ sys.path.append("..")
 from backend.model.yolov7-pose-estimation.pose-estimate import detect
 
 # Create your views here.
-class HandPredictions(APIView):
+class RequesterAction(APIView):
     def post(self, request):
         data = request.image
         
@@ -26,7 +26,41 @@ class HandPredictions(APIView):
         # ret[1] is 'left' or 'right' 
         return Response(response_data, status=200)
     
-class MicControl(APIView):
+class VigilantInformation(APIView):
+    def post(self, request):
+        data = request.image
+        
+        data = request.image
+        
+        #information for processing changes by the image classification module
+        if data == None :
+            pass
+        else :
+            pass
+        
+        prediction_model = AppConfig.model
+        prediction_result = prediction_model.predict()
+        response_data = prediction_result
+        return Response(response_data, status=200)
+    
+class ObservantControl(APIView):
+    def post(self, request):
+        data = request.image
+        
+        data = request.image
+        
+        #information for processing changes by the image classification module
+        if data == None :
+            pass
+        else :
+            pass
+        
+        prediction_model = AppConfig.model
+        prediction_result = prediction_model.predict()
+        response_data = prediction_result
+        return Response(response_data, status=200)
+    
+class ObservantInformation(APIView):
     def post(self, request):
         data = request.image
         
