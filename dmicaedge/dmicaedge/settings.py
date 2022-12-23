@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'dmicaapi',
-    'serverui'
+    'serverui',
 ]
 STATIC_ROOT ="static/"
 MIDDLEWARE = [
@@ -128,4 +128,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MODELS = os.path.join(BASE_DIR, 'backends', 'models')
+MODELS = os.path.join(BASE_DIR, 'backends', 'model', 'yolov7PoseEstimation')

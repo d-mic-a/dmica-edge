@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
-from .apps import AppConfig
+from .apps import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import render
-from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
+#from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 
 
 # import sys 
@@ -14,30 +14,23 @@ from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 # Create your views here.
 class RequesterAction(APIView):
     def post(self, request):
-        data = request.data
+        #data = request.data
+        image_data = request.GET.get('image')
+        image_shape = request.GET.get('shape')
+        detection_model = AppConfig.models
         
-        #information for processing changes by the image classification module
-        if data == None :
-            pass
-        else :
-            pass
         
-        ret = detect(data)
-        # ret will be 'None' if no one start or stop in this image 
-        # ret[0] is [x, y, z]
-        # ret[1] is 'left' or 'right' 
-        return Response(ret, status=200)
+        # predicting the raise hand
+        prediction_hand = detection_model([[image_data, image_shape]])
+        response_hand = {prediction_hand}
+        print(response_hand)
+        return Response(response_hand,status=200)
     
 class VigilantInformation(APIView):
     def post(self, request):
         data = request.data
         
         #information for processing  the data post by client side
-        if data == None :
-            pass
-        else :
-            pass
-        
         
         # return Response(response_data, status=200)
     
