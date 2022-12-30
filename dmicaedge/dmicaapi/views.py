@@ -20,7 +20,7 @@ class RequesterAction(APIView):
         image_shape = request.GET.get('shape')
         detection_model = AppConfig.models
         data = [image_data, image_shape]
-        retrun HttpResponse(data)
+        return HttpResponse(data)
         # return image_data, image_shape
         
         # predicting the raise hand
