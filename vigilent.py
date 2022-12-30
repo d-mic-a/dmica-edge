@@ -6,7 +6,7 @@ from urllib.request import Request, urlopen
 def sendtoserver(img):
     
     server_ip = 'http://192.168.100.1:8000'
-    url = f'{server_ip}/v1/api/prediction'
+    url = f'{server_ip}/v1/api/requester_action'
     #img = cv2.imread(image_file)
     img_b64 = base64.b64encode(img)
     data = {'image': img_b64, 'shape': img.shape}
