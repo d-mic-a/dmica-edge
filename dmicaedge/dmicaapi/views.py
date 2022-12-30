@@ -4,6 +4,7 @@ from .apps import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import render
+from django.http import HttpResponse
 #from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 
 
@@ -18,7 +19,9 @@ class RequesterAction(APIView):
         image_data = request.GET.get('image')
         image_shape = request.GET.get('shape')
         detection_model = AppConfig.models
-        
+        data = [image_data, image_shape]
+        retrun HttpResponse(data)
+        # return image_data, image_shape
         
         # predicting the raise hand
         prediction_hand = detection_model([[image_data, image_shape]])
