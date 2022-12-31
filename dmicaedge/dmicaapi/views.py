@@ -19,6 +19,8 @@ from backend.model.yolov7PoseEstimation.poseEstimate import detect
 class RequesterAction(APIView):
     def post(self, request):
         #data = request.data
+        print(0000000000000000000)
+        '''
         print('before get image')
         image_data = request.GET.get('image')
         print('after get image')
@@ -36,7 +38,7 @@ class RequesterAction(APIView):
         response_hand = {prediction_hand}
         print(response_hand)
         return Response(response_hand,status=200)
-    
+        '''
 class VigilantInformation(APIView):
     def post(self, request):
         data = request.data
