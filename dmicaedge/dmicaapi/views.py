@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import sys 
 print(sys.path)
-sys.path.append('../dmicaedge')
+sys.path.append('/home/fog-server/dmica/dmica-edge')
 from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 
 
