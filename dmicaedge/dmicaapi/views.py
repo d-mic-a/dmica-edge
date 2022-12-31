@@ -19,7 +19,9 @@ from backend.model.yolov7PoseEstimation.poseEstimate import detect
 class RequesterAction(APIView):
     def post(self, request):
         #data = request.data
+        print('before get image')
         image_data = request.GET.get('image')
+        print('after get image')
         image_shape = request.GET.get('shape')
         #detection_model = AppConfig.models
         print(image_data)
