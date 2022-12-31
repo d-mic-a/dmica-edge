@@ -51,7 +51,7 @@ def detect(data):
         if tmp1 != 0 and tmp2 !=0:
             print(tmp1)
         if left_or_right != 'none':
-            return [tmp1, tmp2, left_or_right]
+            return tmp1, tmp2, left_or_right # x, y, left_or_right
             print(0)
     return None
 
