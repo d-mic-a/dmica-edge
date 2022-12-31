@@ -1,3 +1,6 @@
+
+import sys 
+sys.path.append('/home/fog-server/dmica/dmica-edge/dmicaedge/backend/model/yolov7PoseEstimation')
 import cv2
 import time
 import torch
@@ -8,8 +11,6 @@ from torchvision import transforms
 from utils.datasets import letterbox
 from utils.torch_utils import select_device
 from models.experimental import attempt_load
-import sys 
-sys.path.append('/home/fog-server/dmica/dmica-edge/dmicaedge/backend/model/yolov7PoseEstimation')
 from utils.plots import output_to_keypoint, plot_skeleton_kpts
 from utils.general import non_max_suppression_kpt, strip_optimizer
 
