@@ -21,7 +21,9 @@ class RequesterAction(APIView):
         #data = request.data
         image_data = request.GET.get('image')
         image_shape = request.GET.get('shape')
-        detection_model = AppConfig.models
+        #detection_model = AppConfig.models
+        print(image_data)
+        input()
         data = [image_data, image_shape]
         detect(image_data)
         return HttpResponse(data)
