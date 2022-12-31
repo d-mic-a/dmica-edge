@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from dmicaapi import views
 
 urlpatterns = [
     path('requester_action', views.detect)
