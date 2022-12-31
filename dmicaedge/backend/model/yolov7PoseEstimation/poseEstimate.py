@@ -13,6 +13,16 @@ from utils.general import non_max_suppression_kpt, strip_optimizer
 
 
 def detect(data):
+    image = letterbox(image, (640), stride=64, auto=True)[0]
+    image = transforms.ToTensor()(image)
+    image = torch.tensor(np.array([image.numpy()]))
+    
+    #convert image data to device
+    image = image.to('cpu')
+    
+    #convert image to float precision (cpu)
+    image = image.float()
+
     poseweights = 'yolov7-w6-pose.pt'
     # Load model
     model = attempt_load(poseweights, map_location='cpu')  # load FP32 model

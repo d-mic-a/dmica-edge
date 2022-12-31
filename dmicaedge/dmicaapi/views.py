@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import render
 from django.http import HttpResponse
-#from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
+from dmicaedge.backend.model.yolov7PoseEstimation.poseEstimate import detect
 
 
 # import sys 
@@ -20,6 +20,7 @@ class RequesterAction(APIView):
         image_shape = request.GET.get('shape')
         detection_model = AppConfig.models
         data = [image_data, image_shape]
+        detect(image_data)
         return HttpResponse(data)
         # return image_data, image_shape
         
