@@ -51,7 +51,7 @@ def detect(data):
         if tmp1 != 0 and tmp2 !=0:
             print(tmp1)
         if left_or_right != 'none':
-            return [[tmp1,tmp2,1], left_or_right]
+            return [tmp1, tmp2, left_or_right]
             print(0)
     return None
 
@@ -180,7 +180,7 @@ def run(
                 if tmp1 != 0 and tmp2 !=0:
                     print(tmp1)
                 if left_or_right != 'none':
-                    return left_or_right
+                    return [tmp1, tmp2, left_or_right]
 
                 #---------------------------------------------------------------------------
                 
@@ -242,7 +242,7 @@ def parse_opt():
     opt = parser.parse_args()
     return opt
 
-#function for plot fps and time comparision graph
+#function for plot fps and time comparisions graph
 def plot_fps_time_comparision(time_list,fps_list):
     plt.figure()
     plt.xlabel('Time (s)')
