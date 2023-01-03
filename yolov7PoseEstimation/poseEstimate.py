@@ -82,8 +82,8 @@ def run(
     #input(type(video_path))
     #cap = cv2.VideoCapture(video_path)
     #if video_path.isnumeric() :
-    # cap = cv2.VideoCapture(video_path, cv2.CAP_GSTREAMER)
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(video_path, cv2.CAP_GSTREAMER)
+    # cap = cv2.VideoCapture(0)
         #input(int(video_path))
 
     #check if videocapture not opened
