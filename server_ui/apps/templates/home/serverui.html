@@ -1,0 +1,110 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Vigilant Streamer {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">UI</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item active">UI</li>
+            </ol>
+            <div class="card"style="width: 1024px;height:768px;">
+            <div class="row">
+                <div class="card" style="width: 200px;left :10px;top :0px;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ObservantID</li>
+                        <li class="list-group-item">X</li>
+                        <li class="list-group-item">Y</li>
+                        <li class="list-group-item">Z</li>
+                        <li class="list-group-item">Streaming</li>
+                        <li class="list-group-item">Microphone </li>
+
+
+                    </ul>
+                    <div class="card-footer">
+                        Observant1
+                    </div>
+                </div>
+            
+            
+                <div class="card" style="width: 200px;left :200px;top :200px;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">X</li>
+                        <li class="list-group-item">Y</li>
+                        <li class="list-group-item">Z</li>
+
+
+                    </ul>
+                    <div class="card-footer">
+                        People
+                    </div>
+                </div>
+                <div class="card" style="width: 200px;left:400px;top :0px;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ObservantID</li>
+                        <li class="list-group-item">X</li>
+                        <li class="list-group-item">Y</li>
+                        <li class="list-group-item">Z</li>
+                        <li class="list-group-item">Streaming</li>
+                        <li class="list-group-item">Microphone </li>
+
+                    </ul>
+                    <div class="card-footer">
+                        Observant2
+                    </div>
+                </div>
+                
+             
+                <div class="card" style="width: 200px;left:-588px;top :470px;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ObservantID</li>
+                        <li class="list-group-item">X</li>
+                        <li class="list-group-item">Y</li>
+                        <li class="list-group-item">Z</li>
+                        <li class="list-group-item">Streaming</li>
+                        <li class="list-group-item">Microphone </li>
+
+                    </ul>
+                    <div class="card-footer">
+                        Observant3
+                    </div>
+                </div>
+                <div class="card" style="width: 200px;left:0px;top :470px;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ObservantID</li>
+                        <li class="list-group-item">X</li>
+                        <li class="list-group-item">Y</li>
+                        <li class="list-group-item">Z</li>
+                        <li class="list-group-item">Streaming</li>
+                        <li class="list-group-item">Microphone </li>
+
+                    </ul>
+                    <div class="card-footer">
+                        Observant4
+                    </div>
+                </div>
+            </div>    
+            </div>
+            <div style="height: 100vh"></div>
+            <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
+        </div>
+    </main>
+                
+    {% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="/static/assets/demo/chart-area-demo.js"></script>
+    <script src="/static/assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/static/assets/js/datatables-simple-demo.js"></script>
+
+{% endblock javascripts %}
