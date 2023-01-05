@@ -3,7 +3,6 @@
 # Base ----------------------------------------
 matplotlib>=3.2.2
 numpy>=1.18.5
-#opencv-python>=4.1.1
 Pillow>=7.1.2
 PyYAML>=5.3.1
 requests>=2.23.0
@@ -40,3 +39,4 @@ sqlparse==0.4.2
 toml==0.10.2
 whitenoise==5.3.0
 django-environ==0.8.1
+django-background-task==0.1.8
