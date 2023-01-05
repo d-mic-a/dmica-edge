@@ -13,7 +13,9 @@ from utils.general import non_max_suppression_kpt, strip_optimizer
 
 from pathlib import Path
 
-def detect(data):
+# ~/Downloads/venv-test   is env     
+# return x, y, 'left' or 'right'
+def detect(data):  
     poseweights = './yolov7-w6-pose.pt'    
     #file = Path(str(file))#.strip().replace("'", '').lower())
     
@@ -47,12 +49,14 @@ def detect(data):
 
 @torch.no_grad()
 def run(
-        poseweights='/home/fog-server/dmica-server/yolov7PoseEstimation/yolov7-w6-pose.pt',
+        poseweights='/home/fog-server/dmica/dmica-edge/yolov7PoseEstimation/yolov7-w6-pose.pt',
         source='0',
         device='cpu'):
     
-    camSet = 'udpsrc port=5200 ! application/x-rtp, media=(string)video, clock-rate=(int)90000, payload=(int)96 ! rtpjpegdepay ! jpegdec ! videoconvert ! appsink drop=1'
-    file = Path(str('/home/fog-server/dmica-server/yolov7PoseEstimation/yolov7-w6-pose.pt'))
+    #camSet = 'udpsrc port=5200 ! application/x-rtp, media=(string)video, clock-rate=(int)90000, payload=(int)96 ! rtpjpegdepay ! jpegdec ! videoconvert ! appsink drop=1'
+ 
+    camSet = 'udpsrc port=5200 ! application/x-rtp, encoding-name=JPEG,payload=26 ! rtpjpegdepay ! jpegdec ! videoconvert ! appsink'
+    file = Path(str('/home/fog-server/dmica/dmica-edge/yolov7PoseEstimation/yolov7-w6-pose.pt'))
     #file = Path("/home/fog-server/dmica-server/yolov7PoseEstimation/yolov7-w6-pose.pt")
     #print(str(file))
     #print(str(file).strip().replace("'", '').lower())
@@ -90,6 +94,7 @@ def run(
     if (cap.isOpened() == False):
         print('Error while trying to read video. Please check path again')
         input()
+    #input('success open camera')
     #get video frame width
     frame_width = int(cap.get(3))
 
@@ -139,6 +144,7 @@ def run(
         #if success is true, means frame exist
         if ret:
             
+            
             #store frame
             orig_image = frame
 
@@ -176,10 +182,10 @@ def run(
             for idx in range(output.shape[0]):
                 tmp1, tmp2, left_or_right = plot_skeleton_kpts(im0, output[idx, 7:].T, 3) #點在這裡畫
 
-                if tmp1 != 0 and tmp2 !=0:
-                    print(tmp1)
-                if left_or_right != 'none':
-                    return left_or_right
+                #if tmp1 != 0 and tmp2 !=0:
+                    #print(tmp1)
+                if left_or_right != 'none' and tmp1 != 999 and tmp2 != 999:
+                    return tmp1, tmp2, left_or_right #-----------------------------------------------------------------return thing here
 
                 #---------------------------------------------------------------------------
                 
@@ -213,12 +219,11 @@ def run(
             #add FPS on top of video
             cv2.putText(im0, f'FPS: {int(fps)}', (11, 100), 0, 1, [255, 0, 0], thickness=2, lineType=cv2.LINE_AA)
             
-            cv2.imshow('image', im0)
+            #cv2.imshow('image', im0)
             #out.write(im0)
             
             #-------------------------------------------------------------
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+
 
 
         else:

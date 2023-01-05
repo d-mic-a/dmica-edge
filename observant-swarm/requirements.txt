@@ -1,0 +1,4 @@
+gobject==0.1.0
+psutil==5.9.4
+pycairo==1.23.0
+PyGObject==3.42.2

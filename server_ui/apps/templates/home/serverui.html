@@ -1,102 +1,212 @@
-{% extends "layouts/base.html" %}
+<!DOCTYPE html>
+<html>
+{% extends "layouts/base.html" %} 
 
-{% block title %} Vigilant Streamer {% endblock %} 
 
+<!--{% block title %} Vigilant Streamer{% endblock title%} -->
 <!-- Specific Page CSS goes HERE  -->
-{% block stylesheets %}{% endblock stylesheets %}
-
-{% block content %}
-
-    <main>
-        <div class="container-fluid px-4">
-            <h1 class="mt-4">UI</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <li class="breadcrumb-item active">UI</li>
-            </ol>
-            <div class="card"style="width: 1024px;height:768px;">
-            <div class="row">
-                <div class="card" style="width: 200px;left :10px;top :0px;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ObservantID</li>
-                        <li class="list-group-item">X</li>
-                        <li class="list-group-item">Y</li>
-                        <li class="list-group-item">Z</li>
-                        <li class="list-group-item">Streaming</li>
-                        <li class="list-group-item">Microphone </li>
+<!-- {% block stylesheets %}{% endblock stylesheets %} -->
+<head>
+    <style>
+        .card{
+            background-color : #72a395; border: 2px solid;border-radius:10px;
+        }
+    </style>
+</head>
 
 
-                    </ul>
-                    <div class="card-footer">
-                        Observant1
-                    </div>
-                </div>
-            
-            
-                <div class="card" style="width: 200px;left :200px;top :200px;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">X</li>
-                        <li class="list-group-item">Y</li>
-                        <li class="list-group-item">Z</li>
 
+<body>
+    {% block content %}
+    <div class="container" >
+        <div class="row">          
+            <p>Click the button to demonstrate the prompt box.</p>
 
-                    </ul>
-                    <div class="card-footer">
-                        People
-                    </div>
-                </div>
-                <div class="card" style="width: 200px;left:400px;top :0px;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ObservantID</li>
-                        <li class="list-group-item">X</li>
-                        <li class="list-group-item">Y</li>
-                        <li class="list-group-item">Z</li>
-                        <li class="list-group-item">Streaming</li>
-                        <li class="list-group-item">Microphone </li>
-
-                    </ul>
-                    <div class="card-footer">
-                        Observant2
-                    </div>
-                </div>
-                
-             
-                <div class="card" style="width: 200px;left:-588px;top :470px;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ObservantID</li>
-                        <li class="list-group-item">X</li>
-                        <li class="list-group-item">Y</li>
-                        <li class="list-group-item">Z</li>
-                        <li class="list-group-item">Streaming</li>
-                        <li class="list-group-item">Microphone </li>
-
-                    </ul>
-                    <div class="card-footer">
-                        Observant3
-                    </div>
-                </div>
-                <div class="card" style="width: 200px;left:0px;top :470px;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ObservantID</li>
-                        <li class="list-group-item">X</li>
-                        <li class="list-group-item">Y</li>
-                        <li class="list-group-item">Z</li>
-                        <li class="list-group-item">Streaming</li>
-                        <li class="list-group-item">Microphone </li>
-
-                    </ul>
-                    <div class="card-footer">
-                        Observant4
-                    </div>
-                </div>
-            </div>    
-            </div>
-            <div style="height: 100vh"></div>
-            <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
+            <button onclick="myFunction()">Try it</button>
+        
+            <p id="demo"></p>
+        
+            <script>
+            function myFunction() {
+                var x = prompt("Enter a Value", "0");
+                var y = prompt("Enter a Value", "0");
+                var num1 = parseInt(x);
+                var num2 = parseInt(y);
+            }
+            </script> 
         </div>
-    </main>
+        <!-- --------------------Code Start------------------------- --> 
+        <div class = "row"> 
+            
+        </div>
+
+        <div class ="row bg-light">
+            <div clss ="card-header">
+                <div class="container-fluid px-4 bg-light">
+                    <div class ="row">
+                        <h1 class="mt-4">Vigilant Streamer UI</h1>
+                        <nav class="navbar navbar-expand-lg navbar-light" style ="background-color : #64a5bd;">
+                            <nav aria-label="breadcrumb"style ="background-color : #64a5bd;">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">VIgilan Streamer UI</li>
+                                </ol>
+                            </nav
+                        </nav>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card-body " style="width:2024px;height:1100px;background-color : #c4f5e6; border: 2px solid;border-radius:5px">
+                <div class="row" style="background-color : #c4f5e6;">
+                    <div class="card mb-4" style="width: 200px;left :10px;top :0px;background-color : #72a395; border: 2px solid;border-radius:10px;">                    
+                        <div class = "card-body" style = "background-color : #97bfb3; border: 2px solid;border-radius:5px">
+                            <picture><img src ="https://media.istockphoto.com/id/1298266863/vector/retro-microphone-vector-sign.jpg?s=612x612&w=0&k=20&c=gWqaiRyIC7csOCQ7SF-dO8-dtgUYdCUSBXBwmA2OUNA=" class="img-fluid c1" data-toggle="tooltip" data-placement="right" title="X Value:0 Y Value:0 Z Value:0" alt="Responsive image" style="width:auto"></picture>
+                            <p> </p>
+                            <p> </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                ObservantID
+                            </p>
+                            <p style ="text-align:center;">X01 </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span1_stream">Not Streaming</span>
+                            </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span1_mic"> Microphone is not turning on</span>
+                            </p>
+                            <!--
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Streaming</p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Microphone</p> -->
+                            
+                        </div>
+                        <div class="card-footer text-muted text-dark">
+                            Observant1
+                        </div>
+                    </div>
+                    <!-- Observent 2-->
+
+                    <div class="card mb-4" style="width: 200px;left :800px;top :0px;background-color : #72a395; border: 2px solid;border-radius:10px;">                    
+                        <div class = "card-body" style = "background-color : #97bfb3; border: 2px solid;border-radius:5px">
+                            <picture><img src ="https://media.istockphoto.com/id/1298266863/vector/retro-microphone-vector-sign.jpg?s=612x612&w=0&k=20&c=gWqaiRyIC7csOCQ7SF-dO8-dtgUYdCUSBXBwmA2OUNA=" class="img-fluid c2" data-toggle="tooltip" data-placement="right" title="X Value:0 Y Value:0 Z Value:0" alt="Responsive image" style="width:auto"></picture>
+                            <p> </p>
+                            <p> </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                ObservantID
+                            </p>
+                            <p style ="text-align:center;">X02 </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span2_stream">Not Streaming</span>
+                            </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span2_mic"> Microphone is not turning on</span>
+                            </p>
+                            <!--
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Streaming</p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Microphone</p> -->
+                            
+                        </div>
+                        <div class="card-footer text-muted text-dark">
+                            Observant2
+                        </div>
+                    </div> 
+                    <!--- Obeservent 3-->
+
+                    <div class="card mb-4" style="width: 200px;left :-300px;top :590px;background-color : #72a395; border: 2px solid;border-radius:10px;">                    
+                        <div class = "card-body" style = "background-color : #97bfb3; border: 2px solid;border-radius:5px">
+                            <picture><img src ="https://media.istockphoto.com/id/1298266863/vector/retro-microphone-vector-sign.jpg?s=612x612&w=0&k=20&c=gWqaiRyIC7csOCQ7SF-dO8-dtgUYdCUSBXBwmA2OUNA=" class="img-fluid c3" data-toggle="tooltip" data-placement="right" title="X Value:0 Y Value:0 Z Value:0" alt="Responsive image" style="width:auto"></picture>
+                            <p> </p>
+                            <p> </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                ObservantID
+                            </p>
+                            <p style ="text-align:center;">X03 </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span3_stream">Not Streaming</span>
+                            </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span3_mic"> Microphone is not turning on</span>
+                            </p>
+                            <!--
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Streaming</p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Microphone</p> -->
+                            
+                        </div>
+                        <div class="card-footer text-muted text-dark">
+                            Observant3
+                        </div>
+                    </div>
+
+                    <!-- Observant 4-->
+                    <div class="card mb-4" style="width: 200px;left :300px;top :570px;background-color : #72a395; border: 2px solid;border-radius:10px;">                    
+                        <div class = "card-body" style = "background-color : #97bfb3; border: 2px solid;border-radius:5px">
+                            <picture><img src ="https://media.istockphoto.com/id/1298266863/vector/retro-microphone-vector-sign.jpg?s=612x612&w=0&k=20&c=gWqaiRyIC7csOCQ7SF-dO8-dtgUYdCUSBXBwmA2OUNA=" class="img-fluid c4" data-toggle="tooltip" data-placement="right" title="X Value:0 Y Value:0 Z Value:0" alt="Responsive image" style="width:auto"></picture>
+                            <p> </p>
+                            <p> </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                ObservantID
+                            </p>
+                            <p style ="text-align:center;">X04 </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span4_stream">Not Streaming</span>
+                            </p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">
+                                <span class= "span4_mic"> Microphone is not turning on</span>
+                            </p>
+                            <!--
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Streaming</p>
+                            <p style="background-color: #ddf0ea; border: 2px solid; border-radius:5px; text-center">Microphone</p> -->
+                            
+                        </div>
+                        <div class="card-footer text-muted text-dark">
+                            Observant4
+                        </div>
+                    </div>
+
+                    <!---People-->
+
+                    <div class="card mb-4" style="width: 200px;height :200px;left :-350px;top :400px;background-color : #72a395; border: 2px solid;border-radius:10px">                    
+                        <div class = "card-body" style = "background-color : #97bfb3; border: 2px solid;border-radius:5px">
+                            <picture><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr_aQUHC4p_1DxMX1ZitOcemUMBfpwdh56KA&usqp=CAU"  class="img-fluid p1" data-toggle="tooltip" data-placement="right" title="X Value:0 Y Value:0 Z Value:0" alt="Responsive image" style="width:auto;"></picture>
+                        </div>
+                        <div class="card-footer text-muted text-dark">
+                            People
+                        </div>
+                    </div>              
                 
-    {% endblock content %}
+        
+                    
+                </div>    
+            </div>
+            <!--<div style="height: 100vh"></div> -->
+        </div>
+        <div class ="row">
+            <div class="card mb-4"><div class="card-body">Welcome to our fog server website xD</div></div>
+        </div>
+    </div>
+
+    <div class="row">          
+        <p>Click the button to demonstrate the prompt box.</p>
+
+        <button onclick="myFunction1()">Try it</button>
+    
+        <p id="demo"></p>
+        <script type="text/javascript">
+            var x = 34;
+            var y = 23;
+            var z = 12;
+            function myFunction1() {
+                $(".c1").attr('title',"X Value: "+ x +" Y Value: "+y+ " Z Value: "+z);
+                $(".span1_stream ").text("Streaming");
+                $(".span1_mic ").text("Microphone turning on");                       
+            }
+        </script>
+    </div>
+
+</body>
+{% endblock content %}
+
+
+</html>
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
@@ -106,5 +216,6 @@
     <script src="/static/assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="/static/assets/js/datatables-simple-demo.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 {% endblock javascripts %}

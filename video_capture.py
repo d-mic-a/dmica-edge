@@ -5,13 +5,13 @@ from time import sleep
 gi.require_version('Gst', '1.0')
 from gi.repository import Gst, GLib
 
-Gst.init()
+Gst.init(None)
 
 main_loop = GLib.MainLoop()
 main_loop_thread = Thread(target=main_loop.run)
 main_loop_thread.start()
 
-pipeline = Gst.parse_launch("udpsrc port=5200 ! application/x-rtp, media=video, clock-rate=90000, payload=96 ! rtpjpegdepay ! jpegdec ! videoconvert ! autovideosink")
+pipeline = Gst.parse_launch("udpsrc port=5200 ! application/x-rtp, encoding-name=JPEG,payload=26 ! rtpjpegdepay ! jpegdec ! videoconvert ! autovideosink")
 pipeline.set_state(Gst.State.PLAYING)
 
 try:

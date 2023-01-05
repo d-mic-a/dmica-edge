@@ -18,8 +18,8 @@ def gsutil_getsize(url=''):
 
 def attempt_download(file, repo='WongKinYiu/yolov7'):
     # Attempt file download if does not exist
-    file = Path(str(file).strip().replace("'", '').lower())
-    file = Path(str('/home/fog-server/dmica-server/yolov7PoseEstimation/yolov7-w6-pose.pt'))
+    file = Path(str(file))#.strip().replace("'", '').lower())
+    #file = Path(str('/home/fog-server/dmica-server/yolov7PoseEstimation/yolov7-w6-pose.pt'))
     #file = Path("/home/fog-server/dmica-server/yolov7PoseEstimation/yolov7-w6-pose.pt")
 
     if not file.exists():
