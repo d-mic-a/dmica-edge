@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from observant_swarm import *
-from backdround_task import background
+from background_task import background
 
 @background(schedule=5)
 def run_observat_swarm():
