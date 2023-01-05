@@ -8,6 +8,12 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
+from observant_swarm import *
+
+@background(schedule=5)
+def run_observat_swarm():
+    
+
 
 
 @login_required(login_url="/login/")
