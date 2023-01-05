@@ -12,7 +12,8 @@ from observant_swarm import *
 
 @background(schedule=5)
 def run_observat_swarm():
-    
+    swarm = Swarm(("127.0.0.1","1000"))
+    swarm.start_discovery()
 
 
 
